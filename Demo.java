@@ -1,21 +1,19 @@
-class Demo
-{
-public static void main(String args[])
-{
-	int x=10;
-	int y=0;
-	try{
-     System.out.println(x/y);
-     }
-     catch(Exception e1)
-    {
-	System.out.println("Divide by zero error");
+import java.util.Scanner;
 
-    }
-   finally
-   {
-	System.out.println("This Is a Finally Block");
-    }
+class Demo{
+public static void main(String [] args){
+  Scanner sc =new Scanner(System.in);
+  String str = sc.next();
+  System.out.println(str);
+  StringBuffer s1 = new StringBuffer(str);
+  String temp = new String(s1.reverse());
+  System.out.println(s1);
+  if (str.equals(temp)){
+	  System.out.println("String is  palindrome");
+	  } else {
+	  System.out.println("String is not  palindrome");
+		  }
+
 
 }
 }
