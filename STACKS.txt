@@ -1,0 +1,114 @@
+
+
+
+
+
+Assignment No:-1.2
+Title:-Implementation of Program Based of Stack.
+Name:-Bharambe Diksha Nandraj
+Roll No:-13
+________________________________________________________________
+
+#include<iostream.h>
+#include<conio.h>
+
+class STACK
+ {
+	private:
+		  int *A,s,n;
+
+	public:
+		  STACK(int);
+		  void PUSH_13(int ele);
+		  int POP_13();
+		  void LIST_ALL_13();
+};
+STACK::STACK(int par)
+{
+	s=par;
+	n=0;
+	A=new int[s+1];
+}
+void STACK::PUSH_13(int ele)
+  {
+	 if(n==s)
+	 {
+	   cout<<"\n stack is full" ;
+	   return;
+	 }
+	 n=n+1;
+	 A[n]=ele;
+ }
+ int STACK::POP_13()
+   {
+	 if (n==0)
+	 {
+	  cout <<"\n stack is empty" ;
+	  return NULL;
+	  }
+	  int ele=A[n];
+	  n=n-1;
+	  return ele;
+
+}
+ void STACK::LIST_ALL_13()
+   {
+	  if (n==0)
+	  {
+	     cout<<"\n stack is empty" ;
+	  }
+	  else
+	  {
+	     cout<<endl<<"\n element in stack" ;
+	     for(int i=n;i>=1;i--)
+	     {
+		cout<<A[i]<<"   ";
+	     }
+	  }
+   }
+
+void MENU()
+{
+	 int opt,ele,size;
+	 cout<<"\n enter size of stack" ;
+	 cin>>size;
+	 STACK obj(size);
+	 do
+	 {
+	   cout<<"\n 1.PUSH" ;
+	   cout<<"\n 2.POP"  ;
+	   cout<<"\n 3.LIST" ;
+	   cout<<"\n 4.EXIT" ;
+	   cout<<"\n enter your option" ;
+	   cin>>opt;
+	   switch(opt)
+	   {
+		  case 1:
+			  cout<<"\n enter ele to add" ;
+			  cin>>ele;
+			  obj.PUSH_13(ele);
+			  break;
+
+		  case 2:
+			  int ele=obj.POP_13();
+			  cout<<"\ndeleted element are "<<ele;
+			  break;
+
+		 case 3:
+			 obj.LIST_ALL_13();
+			 break;
+
+		 case 4:
+			return;
+
+		default:
+			cout<<"\n Invalid Option";
+	  }
+	}while(1);
+}
+void main()
+ {
+	clrscr();
+	MENU();
+	getch();
+ }
